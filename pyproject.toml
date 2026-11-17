@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "presenter-cards"
+version = "0.1.0"
+description = "Turn a Markdown outline into printable A6 presenter note cards."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Christopher Esterguard" }]
+dependencies = ["reportlab>=4.0"]
+
+[project.optional-dependencies]
+dev = ["pytest", "pypdf"]
+
+[project.scripts]
+presenter-cards = "presenter_cards.cli:main"
+
+[tool.setuptools]
+packages = ["presenter_cards"]
